@@ -19,11 +19,8 @@ class ViewController: UIViewController {
         game.random()
         game.reset()
         updateViewFromModel()
-        
-        print("reset")
     }
     @IBAction func TouchCard(_ sender: UIButton) {
-        print("agh! a ghost!")
         flipCount += 1
         if let cardNumber = cardButtons.index(of: sender){
             game.chooseCard(at: cardNumber)
@@ -47,8 +44,18 @@ class ViewController: UIViewController {
             }
         }
     }
-    var emojiChoices = ["😀","☺️","😜","😏","😠","😡","🥶","😱","😰"]
+    var emojiTheme = [["🐶","🐱","🐭","🐹","🐰","🦊","🐻","🐼","🐨"],
+                      ["🐝","🐛","🦋","🐌","🐞","🐜","🦟","🦗","🕷"],
+                      ["🐙","🦑","🦐","🦞","🦀","🐡","🐠","🐟","🐬"],
+                      ["🦍","🐘","🦛","🦏","🐪","🦒","🦘","🐃","🦓"],
+                      ["⚽️","🏀","🏈","⚾️","🥎","🎾","🏐","🏉","🎱"],
+                      ["🚗","🚕","🚙","🚌","🚎","🏎","🚓","🚑","🚒"]]
+    
+    lazy var emojiChoices = emojiTheme[Int(arc4random_uniform(UInt32(emojiTheme.count)))]
     var emoji = [Int:String]()
+    func randomRow()->Int{
+        return Int(arc4random_uniform(UInt32(emojiTheme.count)))
+    }
     func emoji(for card: Card) -> String{
         if emoji[card.identifier] == nil, emojiChoices.count > 0 {
             let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))

@@ -36,7 +36,6 @@ class Concentration{
             cards += [card,card]
         }
         random()
-        //TODO: Shuffle the cards
     }
     func random(){
         cards.shuffle()
