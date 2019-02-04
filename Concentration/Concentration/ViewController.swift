@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBAction func Reset(_ sender: UIButton) {
         flipCount = 0
-//        game.random()
+        game.random()
         game.reset()
         updateViewFromModel()
     }
