@@ -9,7 +9,7 @@
 import Foundation
 class Concentration{
     var cards = [Card]()
-    var score = 0
+    var score = 0, flipCount = 0
     var indexOfOneAndOnlyFaceUpCard: Int?
     func chooseCard(at index: Int){
         if !cards[index].isMatched{
@@ -17,8 +17,6 @@ class Concentration{
                 if cards[matchIndex].identifier == cards[index].identifier{
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
-//                    cards[index].fliped = true
-//                    cards[matchIndex].fliped = true
                     scoreUp()
                 }
                 if cards[index].fliped && cards[index].isMatched == false { scoreDown() }
@@ -47,12 +45,10 @@ class Concentration{
     }
     func scoreUp(){
         score += 2
-        print("score up \(score)")
     }
     func scoreDown(){
         score -= 1
         if score <= 0 { score = 0 }
-        print("score down \(score)")
     }
     func random(){
         cards.shuffle()
@@ -64,7 +60,11 @@ class Concentration{
             cards[index].fliped = false
             indexOfOneAndOnlyFaceUpCard = nil
             score = 0
+            flipCount = 0
         }
+    }
+    func flipCounter(){
+        flipCount += 1
     }
 }
 
