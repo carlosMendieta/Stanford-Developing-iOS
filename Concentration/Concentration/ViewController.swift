@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     var flipCount = 0 { didSet{flipCountLabel.text = "Flips: \(flipCount)"}}
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
-    
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBAction func Reset(_ sender: UIButton) {
         flipCount = 0
-        game.random()
+//        game.random()
         game.reset()
         updateViewFromModel()
     }
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         else{
             print("chosen card was not in cardButtons")
         }
+        scoreLabel.text = "Score: \(game.score)"
     }
     func updateViewFromModel(){
         for index in cardButtons.indices {

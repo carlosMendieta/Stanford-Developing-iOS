@@ -11,6 +11,7 @@ import Foundation
 struct Card {
     var isFaceup = false
     var isMatched = false
+    var fliped = false
     var identifier: Int
     static var identifierFactory = 0
     static func getUniqueIdentifier() -> Int{

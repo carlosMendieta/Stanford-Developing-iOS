@@ -147,7 +147,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6l-tk-G62">
-                                <rect key="frame" x="131" y="761" width="158" height="48"/>
+                                <rect key="frame" x="237" y="364" width="158" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Reset Game"/>
@@ -155,6 +155,13 @@
                                     <action selector="Reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngh-nx-ou9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksg-To-uho">
+                                <rect key="frame" x="20" y="364" width="157" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -169,6 +176,7 @@
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="W6T-gO-MYV" id="rBp-Rj-pqV"/>
+                        <outlet property="scoreLabel" destination="Ksg-To-uho" id="8ck-A6-hrV"/>
                         <outletCollection property="cardButtons" destination="KNC-1F-RIT" collectionClass="NSMutableArray" id="W88-vG-wAg"/>
                         <outletCollection property="cardButtons" destination="aq7-Sr-qDM" collectionClass="NSMutableArray" id="Waq-HG-TPP"/>
                         <outletCollection property="cardButtons" destination="WYZ-Wq-rjW" collectionClass="NSMutableArray" id="htJ-YE-u7O"/>
@@ -185,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-991.20000000000005" y="64.31784107946028"/>
+            <point key="canvasLocation" x="-991.304347826087" y="64.285714285714278"/>
         </scene>
     </scenes>
 </document>
